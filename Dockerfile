@@ -39,7 +39,7 @@ RUN apt-get update \
 	&& rm -rf /src/*.deb
 
 
-# ADD https://cloud.gastecnologia.com.br/cef/warsaw/install/GBPCEFwr64.deb /src/GBPCEFwr64.deb
+ADD https://cloud.gastecnologia.com.br/bb/downloads/ws/warsaw_setup64.deb /src/warsaw_setup64.deb
 COPY startup.sh /home/ff/startup.sh
 
 # Add ff  user
