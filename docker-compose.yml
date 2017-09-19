@@ -8,6 +8,24 @@ services:
       - DISPLAY=${DISPLAY}
       - XAUTHORITY=/home/ff/.Xauthority
       - HOST_HOSTNAME=${HOSTNAME}
+      - BANK_URL=www.caixa.gov.br
+      - WARSAW_DEB=GBPCEFwr64.deb
+    cpuset: '0'
+    mem_limit: 512M
+    volumes:
+      - /dev/shm:/dev/shm
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XAUTHORITY}:/tmp/.docker.xauth:ro
+  wsbb:
+    build: .
+    devices:
+      - /dev/snd:/dev/snd
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/home/ff/.Xauthority
+      - HOST_HOSTNAME=${HOSTNAME}
+      - BANK_URL=www.bb.com.br
+      - WARSAW_DEB=warsaw_setup64.deb
     cpuset: '0'
     mem_limit: 512M
     volumes:

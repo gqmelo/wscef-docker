@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Abrir Site do Banco
+Name=Abrir CEF
 Comment=
 # http://unix.stackexchange.com/questions/144422/getting-the-current-path-in-desktop-exec-command
-Exec=sh -c 'cd `dirname $1` && docker-compose run --rm wscef' dummy %k
+Exec=sh -c 'cd `dirname $1` && docker-compose build wscef && docker-compose run --rm wscef' dummy %k
 Icon=
 Terminal=true
 Type=Application

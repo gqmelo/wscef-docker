@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Abrir BB
+Comment=
+# http://unix.stackexchange.com/questions/144422/getting-the-current-path-in-desktop-exec-command
+Exec=sh -c 'cd `dirname $1` && docker-compose build wsbb && docker-compose run --rm wsbb' dummy %k
+Icon=
+Terminal=true
+Type=Application
+StartupNotify=true
